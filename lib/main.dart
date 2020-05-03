@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:ui/example_widget.dart';
+
+import 'package:business/example_business.dart';
+import 'package:data_access/example_data_access.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,7 +53,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  ExampleDataAccess _exampleBusinessContract;
+  ExampleBusiness _exampleBusiness;
+
   int _counter = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _exampleBusinessContract = ExampleDataAccess();
+    _exampleBusiness =
+        ExampleBusiness(exampleBusinessContract: _exampleBusinessContract);
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -91,6 +111,8 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(_exampleBusiness.getString()),
+            ExampleWidget(),
             Text(
               'You have pushed the button this many times:',
             ),
