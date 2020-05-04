@@ -38,8 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
               RaisedButton(
                 child: Text('Load'),
                 onPressed: () {
-                  final LoginScreenBloc bloc =
-                      BlocProvider.of<LoginScreenBloc>(context);
+                  var bloc = BlocProvider.of<LoginScreenBloc>(context);
                   bloc.add(LoginEvent('username', 'password'));
                 },
               ),

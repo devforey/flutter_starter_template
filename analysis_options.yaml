@@ -1,1 +1,13 @@
-include: package:pedantic/analysis_options.yaml
+include: package:effective_dart/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - "bin/cache/**"
+    - "lib/*.iconfig.dart"
+    - "lib/*.gr.dart"
+    - "lib/**/*.iconfig.dart"
+    - "lib/**/*.gr.dart"
+
+linter:
+  rules:
+    one_member_abstracts: false

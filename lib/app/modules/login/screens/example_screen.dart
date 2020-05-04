@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_starter_template/app/modules/login/widgets/example_widget.dart';
 
+import '../widgets/example_widget.dart';
+
+/// Example Screen
 class ExampleScreen extends StatefulWidget {
+  /// Constructor for Example Screen
   ExampleScreen({Key key}) : super(key: key);
 
   @override

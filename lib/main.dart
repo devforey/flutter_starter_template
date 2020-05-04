@@ -1,14 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starter_template/main_router.gr.dart';
 
 import 'dependency_locator.dart';
+import 'main_router.gr.dart';
 
 void main() {
   configure();
   runApp(Main());
 }
 
+/// Starting component of the application
 class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class Main extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        builder: (BuildContext context, Widget child) {
+        builder: (context, child) {
           return ExtendedNavigator<MainRouter>(
             router: MainRouter(),
           );

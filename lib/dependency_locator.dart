@@ -3,7 +3,10 @@ import 'package:injectable/injectable.dart';
 
 import 'dependency_locator.iconfig.dart';
 
-final getIt = GetIt.instance;
+/// Singleton instasnce of Dependency Injector [GetIt]
+final GetIt getIt = GetIt.instance;
 
 @injectableInit
+
+/// Initialization of [GetIt] instance
 void configure() => $initGetIt(getIt);
