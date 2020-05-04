@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:ui/example_widget.dart';
+import 'package:flutter_starter_template/ui/example_widget.dart';
 
-import 'package:business/example_business.dart';
-import 'package:data_access/example_data_access.dart';
+import 'business/example_business.dart';
+import 'data_access/example_data_access.dart';
+import 'dependency_locator.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatefulWidget {
-  // This widget is the root of your application.
-  @override
-  _MyAppState createState() => _MyAppState();
+void main() {
+  configure();
+  runApp(Main());
 }
 
-class _MyAppState extends State<MyApp> {
+class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
