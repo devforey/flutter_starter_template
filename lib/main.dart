@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter_template/business/example_business.dart';
 import 'package:flutter_starter_template/ui/example_widget.dart';
+import 'package:get_it/get_it.dart';
 
-import 'business/example_business.dart';
-import 'data_access/example_data_access.dart';
 import 'dependency_locator.dart';
 
 void main() {
@@ -51,17 +51,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  ExampleDataAccess _exampleBusinessContract;
   ExampleBusiness _exampleBusiness;
-
   int _counter = 0;
 
   @override
   void initState() {
     super.initState();
-    _exampleBusinessContract = ExampleDataAccess();
-    _exampleBusiness =
-        ExampleBusiness(exampleBusinessContract: _exampleBusinessContract);
+    _exampleBusiness = GetIt.I<ExampleBusiness>();
   }
 
   void _incrementCounter() {
