@@ -3,10 +3,9 @@ include: package:effective_dart/analysis_options.yaml
 analyzer:
   exclude:
     - "bin/cache/**"
-    - "lib/*.iconfig.dart"
-    - "lib/*.gr.dart"
-    - "lib/**/*.iconfig.dart"
-    - "lib/**/*.gr.dart"
+    - "**.iconfig.dart"
+    - "**.gr.dart"
+    - "**/*.g.dart"
 
 linter:
   rules:

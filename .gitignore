@@ -39,3 +39,4 @@ lib/generated_plugin_registrant.dart
 # build_runner generated files 
 **/*.iconfig.dart
 **/*.gr.dart
+**/*.g.dart
